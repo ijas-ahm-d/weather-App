@@ -11,16 +11,10 @@ class NetWorkApiServices extends HttpApiServices {
   @override
   Future<dynamic> httpGetMethod({
     required String url,
-    bool haveHeader = false,
   }) async {
-    final accessToken = "helo";
-    Map<String, String> headers =
-        haveHeader ? {"authorization": "Bearer $accessToken"} : {};
-
     try {
       final response = await http.get(
         Uri.parse(url),
-        headers: haveHeader ? headers : null,
       );
       final successResponse = returnResponse(response);
       return successResponse;

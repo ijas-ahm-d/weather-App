@@ -52,14 +52,10 @@ class HomeScreen extends StatelessWidget {
                   child: Center(
                     child: TextFormField(
                       onFieldSubmitted: (String s) {
-                        controller.cityname.value =
-                            s;
-                        controller
-                            .getCityWeather(s);
-                        controller.isLoaded.value =
-                            false;
-                        controller.controller
-                            .clear(); 
+                        controller.cityname.value = s;
+                        controller.getCityWeather(s);
+                        controller.isLoaded.value = false;
+                        controller.controller.clear();
                       },
                       controller: controller.controller,
                       cursorColor: Colors.white,
@@ -98,8 +94,7 @@ class HomeScreen extends StatelessWidget {
                         size: 40,
                       ),
                       Obx(() => Text(
-                            controller
-                                .cityname.value, 
+                            controller.cityname.value,
                             overflow: TextOverflow.ellipsis,
                             style: const TextStyle(
                               fontSize: 28,
@@ -181,7 +176,6 @@ class HomeScreen extends StatelessWidget {
                         width: 10,
                       ),
                       Text(
-                        
                         'Pressure: ${controller.press?.toInt()} hPa',
                         style: const TextStyle(
                           fontSize: 20,
